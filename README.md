@@ -9,7 +9,7 @@
 6. docker pull 602037364990.dkr.ecr.us-east-1.amazonaws.com/sentieoonenote:latest
 7. docker run -p 8003:8000 --restart always -e ENV_FOR_DYNACONF=testing 602037364990.dkr.ecr.us-east-1.amazonaws.com/sentieoonenote:latest
 
-# *** INTEGRATE FRONTEND
+*** INTEGRATE FRONTEND
 1.setup local.sentieo.com on the machine
 2. add FrotendAPIs.js in sentieoweb/js/render/calendar/API folder
 3. Import the apis in MenuMain.js
