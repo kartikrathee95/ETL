@@ -1,0 +1,299 @@
+[global]
+VAULT_CT_READ = "cf34f6f6-ace6-68ef-29b5-5a8aedbf04d8"
+VAULT_CT_SEAL = "cf34f6f6-ace6-68ef-29b5-5a8aedbf04d7"
+VAULT_CT_WRITE = "cf34f6f6-ace6-68ef-29b5-5a8aedbf04d9"
+KAFKA_DNS = "gateway-kafka1.sntio.com:9092,gateway-kafka2.sntio.com:9092,gateway-kafka3.sntio.com:9092"
+ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost:8000", "https://calendar-widget.sentieo.com", "http://localnotebook.sentieo.com","https://local.sentieo.com","https://notebook.sentieo.com", "https://testing.sentieo.com", "https://dev.sentieo.com", "https://staging.sentieo.com", "https://app.sentieo.com",
+ "https://app2.sentieo.com", "https://schroderstest.sentieo.com", "https://schroders.sentieo.com", "https://canyon.sentieo.com", "https://tigerglobal.sentieo.com", "https://canyontest.sentieo.com", "https://psp.sentieo.com",
+ "https://psptest.sentieo.com", "https://balyasny.sentieo.com", "https://sandbox.sentieo.com", "https://citadel.sentieo.com", "https://beta.sentieo.com", "https://appslackservice.sentieo.com", "https://wellsfargo.sentieo.com",
+ "https://sandboxslackservice.sentieo.com", "https://tigerglobalslackservice.sentieo.com", "https://schrodersslackservice.sentieo.com","https://schroderstestslackservice.sentieo.com","https://canyonslackservice.sentieo.com",
+ "https://canyontestslackservice.sentieo.com", "https://pspslackservice.sentieo.com","https://psptestslackservice.sentieo.com", "https://citadelslackservice.sentieo.com", "https://balyasnyslackservice.sentieo.com",
+ "https://stagingslackservice.sentieo.com", "https://wellsfargoslackservice.sentieo.com", "https://beta-balyasny.sentieo.com", "https://login.sentieo.com", "https://integrations.sentieo.com"]
+
+
+
+
+[default]
+log_level = "INFO"
+debug = false
+MONGO_HOST = "mongodb://localhost:27017"
+PSQL_HOST= "postgresql://localhost:5432"
+REDIS_HOST = "127.0.0.1"
+VAULT_URL = "http://10.2.0.23:8200"
+LOGOUT_PAGE = "https://70778efccea9.ngrok.io/api/msteamsbot/logout.html"
+APP_HOST = "localhost"
+LOGIN_PAGE = "https://user-notebook.sentieo.com/?source=msteams&height=700&width=600"
+ATTACH_BUCKET = ""
+SERVER_TYPE ="test"
+DOMAIN = "testing"
+
+
+[development]
+log_level = "DEBUG"
+debug = true
+MONGO_HOST = "mongodb://localhost:27017"
+PSQL_HOST= "postgresql://localhost:5432"
+REDIS_HOST = "127.0.0.1"
+VAULT_URL = "http://10.2.0.23:8200"
+LOGOUT_PAGE = "https://70778efccea9.ngrok.io/api/msteamsbot/logout.html"
+APP_HOST = "localhost"
+SERVER_TYPE ="test"
+LOGIN_PAGE = "https://user-notebook.sentieo.com/?source=msteams&height=700&width=600"
+ATTACH_BUCKET = ""
+DOMAIN = "testing"
+ATTACH_PATH = ""
+
+[testing]
+log_level = "DEBUG"
+debug = false
+DOMAIN = "testing"
+CREDENTIALS_SERVER = "testing"
+MONGO_HOST = "mongodb://user-mongo1-testing.sntio.com:27018,user-mongo2-testing.sntio.com:27018"
+PSQL_HOST= "postgresql://psql-testing.sntio.com:5432"
+REDIS_HOST = 'user-testing-redis.sntio.com'
+ATTACH_BUCKET = "beta-sentieoattachments"
+ATTACH_PATH = "attachments/"
+BASE_URL = "testingslackservice"
+SERVER_TYPE ="test"
+VAULT_URL = "http://10.2.0.23:8200"
+LOGOUT_PAGE = "https://testingintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-testing.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+
+[beta]
+debug = false
+MONGO_HOST = "mongodb://user-mongo1.sntio.com:27018,user-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "sentieoattachments"
+ATTACH_PATH = ""
+DOMAIN = "beta"
+BASE_URL = "appslackservice"
+SERVER_TYPE = "beta"
+VAULT_URL = "http://user-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "user"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-beta.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+
+[staging]
+debug = false
+MONGO_HOST = "mongodb://user-mongo1.sntio.com:27018,user-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "sentieoattachments"
+ATTACH_PATH = ""
+DOMAIN = "staging"
+BASE_URL = "appslackservice"
+SERVER_TYPE = "staging"
+VAULT_URL = "http://user-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "user"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-staging.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[app]
+debug = false
+MONGO_HOST = "mongodb://user-mongo1.sntio.com:27018,user-mongo2.sntio.com:27018"
+PSQL_HOST= "postgresql://user-psql.sntio.com:5432"
+REDIS_HOST = "user-redis.sntio.com"
+ATTACH_BUCKET = "sentieoattachments"
+ATTACH_PATH = ""
+DOMAIN = "app"
+BASE_URL = "appslackservice"
+SERVER_TYPE = "app"
+VAULT_URL = "http://user-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "user"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[app2]
+debug = false
+MONGO_HOST = "mongodb://user-mongo1.sntio.com:27018,user-mongo2.sntio.com:27018"
+PSQL_HOST= "postgresql://user-psql.sntio.com:5432"
+REDIS_HOST = "user-redis.sntio.com"
+ATTACH_BUCKET = "sentieoattachments"
+ATTACH_PATH = ""
+DOMAIN = "app2"
+BASE_URL = "appslackservice"
+SERVER_TYPE = "app2"
+VAULT_URL = "http://user-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "user"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app2.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-app]
+debug = false
+MONGO_HOST = "mongodb://user-mongo1.sntio.com:27018,user-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "sentieoattachments"
+ATTACH_PATH = ""
+DOMAIN = "app"
+BASE_URL = "appslackservice"
+SERVER_TYPE = "app"
+VAULT_URL = "http://user-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "user"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-balyasny]
+debug = false
+MONGO_HOST = "mongodb://user-bam-mongo-1.sntio.com:27018,user-bam-mongo-2.sntio.com:27018"
+ATTACH_BUCKET = "balyasny-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "balyasnyslackservice"
+DOMAIN = "balyasny"
+SERVER_TYPE = "app"
+VAULT_URL = "http://172.20.1.102:8200"
+CREDENTIALS_SERVER = "balyasny"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-citadel]
+debug = false
+MONGO_HOST = "mongodb://user-citadel-mongo-1.sntio.com:27018,user-citadel-mongo-2.sntio.com:27018"
+ATTACH_BUCKET = "citadel-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "citadelslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "citadel"
+VAULT_URL = "http://172.19.1.102:8200"
+CREDENTIALS_SERVER ="citadel"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-psp_sb]
+debug = false
+MONGO_HOST = "mongodb://c43-sb-data.sntio.com:27018"
+ATTACH_BUCKET = "c43-sb-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "psptestslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "psptest"
+VAULT_URL = "http://172.19.2.185:8200"
+CREDENTIALS_SERVER ="c43_sb"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-psp]
+debug = false
+MONGO_HOST = "mongodb://c43-prod-mongo1.sntio.com:27018,c43-prod-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "c43-prod-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "pspslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "psp"
+VAULT_URL = "http://172.19.3.136:8200"
+CREDENTIALS_SERVER= "c43_prod"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-canyon]
+debug = false
+MONGO_HOST = "mongodb://c45-prod-mongo1.sntio.com:27018,c45-prod-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "c45-prod-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "canyonslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "canyon"
+VAULT_URL = "http://c45-prod-vault1.sntio.com:8200"
+CREDENTIALS_SERVER ="c45_prod"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-canyon_sb]
+debug = false
+MONGO_HOST = "mongodb://c44-sb-data.sntio.com:27018"
+ATTACH_BUCKET = "c44-sb-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "canyontestslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "canyontest"
+VAULT_URL = "http://c44-sb-vault1.sntio.com:8200"
+CREDENTIALS_SERVER ="c44_sb"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-schroders]
+debug = false
+MONGO_HOST = "mongodb://c46-prod-mongo1.sntio.com:27018,c46-prod-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "c46-prod-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "schrodersslackservice"
+DOMAIN = 'schroders'
+SERVER_TYPE = "app"
+VAULT_URL = "http://c46-prod-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "schroders_prod"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-schroders_sb]
+debug = false
+MONGO_HOST = "mongodb://c46-sb-data.sntio.com:27018"
+ATTACH_BUCKET = "c46-sb-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "schroderstestslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "schroderstest"
+VAULT_URL = "http://c46-sb-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "c46_sb"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-tigerglobal]
+debug = false
+MONGO_HOST = "mongodb://c47-prod-mongo1.sntio.com:27018,c47-prod-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "c47-prod-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "tigerglobalslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "tigerglobal"
+VAULT_URL = "http://c47-prod-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "c47_prod"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-sandbox]
+debug = false
+MONGO_HOST = "mongodb://sandbox-mongo1.sntio.com:27018,sandbox-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "sandbox-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL = "sandboxslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "sandbox"
+VAULT_URL = "http://sandbox-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "sandbox"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+[production-wellsfargo]
+debug = false
+MONGO_HOST = "mongodb://c48-prod-mongo1.sntio.com:27018,c48-prod-mongo2.sntio.com:27018"
+ATTACH_BUCKET = "c48-prod-sentieo-1"
+ATTACH_PATH = "attachments/"
+BASE_URL ="wellsfargoslackservice"
+SERVER_TYPE = "app"
+DOMAIN = "wellsfargo"
+VAULT_URL = "http://c48-prod-vault1.sntio.com:8200"
+CREDENTIALS_SERVER = "c48-prod"
+LOGOUT_PAGE = "https://appintegrationservice.sentieo.com/api/msteamsbot/logout.html"
+LOGIN_PAGE = "https://user-app.sentieo.com/?source=msteams&height=700&width=600"
+APP_HOST = "0.0.0.0"
+
+
+
+
+
+
+
+
