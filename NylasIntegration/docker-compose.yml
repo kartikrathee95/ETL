@@ -1,0 +1,34 @@
+version: "3"
+services:
+  user-redis:
+    image: redis:4.0.8
+    container_name: user-redis
+    network_mode: host
+    volumes:
+      - redis_sentieo-vol:/data/
+    ports:
+      - 6379
+
+  notebook-mongo_db:
+    image: mongo:3.2.7
+    container_name: notebook-mongo_db
+    volumes:
+      - mongo-vol:/data/db
+    network_mode: host
+    ports:
+      - 27017
+
+  nylas-integration:
+    image: nylasint:v1
+    container_name: nylas-integration
+    build:
+      context: ../
+      dockerfile: ./NylasIntegration/Dockerfile
+    network_mode: host
+
+
+volumes:
+  mongo-vol:
+    driver: local
+  redis_sentieo-vol:
+    driver: local
